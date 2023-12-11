@@ -342,10 +342,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305296063}
-        m_TargetAssemblyTypeName: JoinClient, Assembly-CSharp
-        m_MethodName: JoinRelay
-        m_Mode: 5
+      - m_Target: {fileID: 1763357167}
+        m_TargetAssemblyTypeName: RelayTest, Assembly-CSharp
+        m_MethodName: JoinRelayButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1652,9 +1652,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 782628376}
-        m_TargetAssemblyTypeName: NetworkUI, Assembly-CSharp
-        m_MethodName: StartHost
+      - m_Target: {fileID: 1763357167}
+        m_TargetAssemblyTypeName: RelayTest, Assembly-CSharp
+        m_MethodName: CreateRelayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1867,7 +1867,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1763357168}
   - component: {fileID: 1763357167}
-  - component: {fileID: 1763357166}
   m_Layer: 0
   m_Name: RelayManager
   m_TagString: Untagged
@@ -1875,7 +1874,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1763357166
+--- !u!114 &1763357167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1884,23 +1883,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763357165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e0cabe0f201164796531698feb0e9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1763357167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763357165}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a923bc9831e46e448ca7d9a6579c454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joinCodeInput: {fileID: 0}
-  JoinCodeText: {fileID: 0}
+  joinCodeInput: {fileID: 1096165389}
+  JoinCodeText: {fileID: 609038236}
 --- !u!4 &1763357168
 Transform:
   m_ObjectHideFlags: 0

@@ -28,8 +28,8 @@ public class RelayTest : MonoBehaviour
     {
         try
         {
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(3);
-            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(3);　//最大接続人数とリージョンIDを記載する　リージョンIDの記載がない場合は最も近いサーバーが選ばれる？(今回の場合はbest region is asia-northeast1と出力された)
+            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId); //ここでコード取得のための変数を定義
 
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetHostRelayData(
                 allocation.RelayServer.IpV4,
@@ -37,7 +37,7 @@ public class RelayTest : MonoBehaviour
                 allocation.AllocationIdBytes,
                 allocation.Key,
                 allocation.ConnectionData
-                );
+                );　　//アロケーション情報の取得（リレーサーバーの情報）
 
             Debug.Log(joinCode);
             JoinCodeText.text = "Join Code: " + joinCode;
@@ -61,7 +61,7 @@ public class RelayTest : MonoBehaviour
         try
         {
             Debug.Log("JoinRelay code = " + joinCode);
-            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+            JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode); 
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetClientRelayData(
                 joinAllocation.RelayServer.IpV4,
                 (ushort)joinAllocation.RelayServer.Port,
@@ -69,7 +69,7 @@ public class RelayTest : MonoBehaviour
                 joinAllocation.Key,
                 joinAllocation.ConnectionData,
                 joinAllocation.HostConnectionData
-                );
+                );　　//入力されたJoin CodeのRelayサーバー情報、アロケーション情報を取得
 
             NetworkManager.Singleton.StartClient();
         }
