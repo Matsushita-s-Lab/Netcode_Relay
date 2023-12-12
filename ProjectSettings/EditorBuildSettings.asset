@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RelayScene_client.unity
     guid: 2add44cbce48ba944b9c9412fabbbeda
   - enabled: 1
