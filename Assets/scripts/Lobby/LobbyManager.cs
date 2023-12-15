@@ -31,6 +31,7 @@ public class LobbyManager : MonoBehaviour
         LobbyListView.OnRefreshLobbyListRequest += (sender, e) => {
             RefreshLobbies();
         };
+        //ƒƒr[‚ÌÄ•\Ž¦
 
         LobbyBanner.OnJoinLobby += (sender, lobby) => {
             Debug.Log("JoinLobby LobbyID=" + lobby.Id.ToString());
