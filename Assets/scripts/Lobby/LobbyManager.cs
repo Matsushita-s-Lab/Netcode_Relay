@@ -10,7 +10,7 @@ public class LobbyManager : MonoBehaviour
     private string playerName;
     private Lobby hostLobby;
     private float heartbeatTimer;
-    private float heatbeatInterval = 15f;
+    private float heartbeatInterval = 15f;
     [SerializeField] private LobbyListView lobbyListView;
 
     private async void Start()
@@ -26,6 +26,7 @@ public class LobbyManager : MonoBehaviour
             Debug.Log("Signed in:" + AuthenticationService.Instance.PlayerId);
         };
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        //‰Šú‰»
 
         LobbyListView.OnRefreshLobbyListRequest += (sender, e) => {
             RefreshLobbies();
@@ -45,9 +46,9 @@ public class LobbyManager : MonoBehaviour
             {
                 CreateLobby();
             }
-
-            RefreshLobbyHeatbeat();
         }
+
+        RefreshLobbyHeartbeat();
     }
 
     public async void CreateLobby()
@@ -76,12 +77,12 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    private async void RefreshLobbyHeatbeat()
+    private async void RefreshLobbyHeartbeat()
     {
         if (hostLobby != null)
         {
             heartbeatTimer += Time.deltaTime;
-            if (heartbeatTimer > heatbeatInterval)
+            if (heartbeatTimer > heartbeatInterval)
             {
                 heartbeatTimer = 0.0f;
                 await LobbyService.Instance.SendHeartbeatPingAsync(hostLobby.Id);
